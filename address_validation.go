@@ -1,5 +1,7 @@
 package go_usps
 
+import "errors"
+
 // Address Web Tool
 // https://www.usps.com/business/web-tools-apis/address-information-api.htm#_Toc532390339
 
@@ -49,6 +51,7 @@ type AddressValidateResponse struct {
 		Zip4          string `xml:"Zip4,omitempty"`
 		DeliveryPoint string `xml:"DeliveryPoint,omitempty"`
 		CarrierRoute  string `xml:"CarrierRoute,omitempty"`
+		Error         *Error `xml:"Error,omitempty"`
 	} `xml:"Address"`
 }
 
@@ -64,6 +67,10 @@ func (U *USPS) AddressVerification(request *AddressValidateRequest) (AddressVali
 
 	result := new(AddressValidateResponse)
 	err := U.Client.Execute(request, result)
+
+	if result.Address.Error != nil {
+		return *result, errors.New(result.Address.Error.Description)
+	}
 
 	return *result, err
 }

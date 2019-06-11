@@ -11,7 +11,7 @@ type TrackIDTrackFieldRequest struct {
 
 type TrackFieldRequest struct {
 	USERID      string                     `xml:"USERID,attr"`
-	Revision    string                     `xml:"Revision"`
+	Revision    string                     `xml:"Revision,omitempty"`
 	ClientIp    string                     `xml:"ClientIp,omitempty"`
 	SourceId    string                     `xml:"SourceId,omitempty"`
 	SourceIdZIP string                     `xml:"SourceIdZIP,omitempty"`

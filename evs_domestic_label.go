@@ -4,7 +4,7 @@ import "encoding/xml"
 
 // eVS Label API
 // https://www.usps.com/business/web-tools-apis/evs-label-api.htm#_Toc487532684
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API eVS.)
 type ImageParametersEVSRequest struct {
 	ImageParameter string `xml:"ImageParameter,omitempty"`
 	XCoordinate    string `xml:"XCoordinate,omitempty"`

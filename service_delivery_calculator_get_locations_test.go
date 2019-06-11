@@ -100,7 +100,9 @@ func TestUSPS_ServiceDeliveryCalculatorGetLocations(t *testing.T) {
 </SDCGetLocationsResponse>
 `
 
-	request := SDCGetLocationsRequest{}
+	request := SDCGetLocationsRequest{
+		USERID: username,
+	}
 
 	request.OriginZIP = "70601"
 	request.DestinationZIP = "21817"

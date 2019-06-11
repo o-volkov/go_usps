@@ -3,11 +3,13 @@ package go_usps
 // Track Request API
 // https://www.usps.com/business/web-tools-apis/track-and-confirm-api.htm#_Toc536704352
 
+type TrackIDTrackRequest struct {
+	ID string `xml:"ID,attr"`
+}
+
 type TrackRequest struct {
-	USERID  string `xml:"USERID,attr"`
-	TrackID []struct {
-		ID string `xml:"ID,attr"`
-	} `xml:"TrackID"`
+	USERID  string                `xml:"USERID,attr"`
+	TrackID []TrackIDTrackRequest `xml:"TrackID"`
 }
 
 func (r *TrackRequest) toHTTPRequestStr(bool) (string, error) {

@@ -11,6 +11,7 @@ type ContentEMRSV40Request struct {
 
 type EMRSV40Request struct {
 	XMLName                  xml.Name              `xml:"EMRSV4.0Request"`
+	USERID                   string                `xml:"USERID,attr"`
 	Option                   string                `xml:"Option"`
 	Revision                 string                `xml:"Revision,omitempty"`
 	CustomerName             string                `xml:"CustomerName"`
@@ -89,6 +90,8 @@ type EMRSV40Response struct {
 }
 
 func (U *USPS) MerchandiseReturnServiceLabels(request *EMRSV40Request) (EMRSV40Response, error) {
+	request.USERID = U.Username
+
 	result := new(EMRSV40Response)
 	err := U.Client.Execute(request, result)
 

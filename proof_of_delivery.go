@@ -2,7 +2,7 @@ package go_usps
 
 // Proof of Delivery API
 // https://www.usps.com/business/web-tools-apis/track-and-confirm-api.htm#_Toc536704369
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API PTSPod.)
 type PTSPodRequest struct {
 	USERID        string `xml:"USERID,attr"`
 	TrackID       string `xml:"TrackID"`

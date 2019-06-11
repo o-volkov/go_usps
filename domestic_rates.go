@@ -36,14 +36,14 @@ type PackageRateV4Request struct {
 	Value                        string                               `xml:"Value,omitempty"`
 	AmountToCollect              string                               `xml:"AmountToCollect,omitempty"`
 	SpecialServices              []PackageSpecialServiceRateV4Request `xml:"SpecialServices,omitempty"`
-	Content                      PackageContentRateV4Request          `xml:"Content,omitempty"`
+	Content                      *PackageContentRateV4Request         `xml:"Content,omitempty"`
 	GroundOnly                   string                               `xml:"GroundOnly,omitempty"`
 	SortBy                       string                               `xml:"SortBy,omitempty"`
 	Machinable                   string                               `xml:"Machinable,omitempty"`
 	ReturnLocations              string                               `xml:"ReturnLocations,omitempty"`
 	ReturnServiceInfo            string                               `xml:"ReturnServiceInfo,omitempty"`
 	DropOffTime                  string                               `xml:"DropOffTime,omitempty"`
-	ShipDate                     PackageShipDateRateV4Request         `xml:"ShipDate,omitempty"`
+	ShipDate                     *PackageShipDateRateV4Request        `xml:"ShipDate,omitempty"`
 }
 
 type RateV4Request struct {

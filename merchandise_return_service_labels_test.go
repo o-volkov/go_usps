@@ -20,7 +20,9 @@ func TestUSPS_MerchandiseReturnServiceLabels(t *testing.T) {
 </EMRSV4.0Response>
 `
 
-	request := EMRSV40Request{}
+	request := EMRSV40Request{
+		USERID: username,
+	}
 	request.CustomerAddress2 = "7 N Wilkes Barre Blvd"
 
 	rStr, _ := request.toHTTPRequestStr(false)

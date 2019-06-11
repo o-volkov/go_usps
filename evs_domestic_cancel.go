@@ -4,7 +4,7 @@ import "encoding/xml"
 
 // eVS Cancel Request
 // https://www.usps.com/business/web-tools-apis/evs-label-api.htm#_Toc487532701
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API eVSCancel.)
 type EVSCancelRequest struct {
 	XMLName       xml.Name `xml:"eVSResponse"`
 	USERID        string   `xml:"USERID,attr"`

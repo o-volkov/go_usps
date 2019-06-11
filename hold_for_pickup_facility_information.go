@@ -2,7 +2,7 @@ package go_usps
 
 // USPS Hold for Pickup Facility Information API
 // https://www.usps.com/business/web-tools-apis/hold-for-pickup-facilities-lookup-api.htm#_Toc504654015
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API HFPFacilityInfo.)
 type HFPFacilityInfoRequest struct {
 	USERID      string `xml:"USERID,attr"`
 	PASSWORD    string `xml:"PASSWORD,attr,omitempty"`

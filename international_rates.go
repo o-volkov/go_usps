@@ -18,27 +18,27 @@ type ContentPackageIntlRateV2Request struct {
 }
 
 type PackageIntlRateV2Request struct {
-	ID                    string                                `xml:"ID,attr"`
-	Pounds                string                                `xml:"Pounds"`
-	Ounces                string                                `xml:"Ounces"`
-	Machinable            string                                `xml:"Machinable,omitempty"`
-	MailType              string                                `xml:"MailType"`
-	GXG                   GXGPackageIntlRateV2Request           `xml:"GXG,omitempty"`
-	ValueOfContents       string                                `xml:"ValueOfContents"`
-	Country               string                                `xml:"Country"`
-	Container             string                                `xml:"Container"`
-	Size                  string                                `xml:"Size"`
-	Width                 string                                `xml:"Width"`
-	Length                string                                `xml:"Length"`
-	Height                string                                `xml:"Height"`
-	Girth                 string                                `xml:"Girth"`
-	OriginZip             string                                `xml:"OriginZip,omitempty"`
-	CommercialFlag        string                                `xml:"CommercialFlag,omitempty"`
-	CommercialPlusFlag    string                                `xml:"CommercialPlusFlag,omitempty"`
-	ExtraServices         ExtraServicesPackageIntlRateV2Request `xml:"ExtraServices,omitempty"`
-	AcceptanceDateTime    string                                `xml:"AcceptanceDateTime,omitempty"`
-	DestinationPostalCode string                                `xml:"DestinationPostalCode,omitempty"`
-	Content               ContentPackageIntlRateV2Request       `xml:"Content,omitempty"`
+	ID                    string                                 `xml:"ID,attr"`
+	Pounds                string                                 `xml:"Pounds"`
+	Ounces                string                                 `xml:"Ounces"`
+	Machinable            string                                 `xml:"Machinable,omitempty"`
+	MailType              string                                 `xml:"MailType"`
+	GXG                   *GXGPackageIntlRateV2Request           `xml:"GXG,omitempty"`
+	ValueOfContents       string                                 `xml:"ValueOfContents"`
+	Country               string                                 `xml:"Country"`
+	Container             string                                 `xml:"Container"`
+	Size                  string                                 `xml:"Size"`
+	Width                 string                                 `xml:"Width"`
+	Length                string                                 `xml:"Length"`
+	Height                string                                 `xml:"Height"`
+	Girth                 string                                 `xml:"Girth"`
+	OriginZip             string                                 `xml:"OriginZip,omitempty"`
+	CommercialFlag        string                                 `xml:"CommercialFlag,omitempty"`
+	CommercialPlusFlag    string                                 `xml:"CommercialPlusFlag,omitempty"`
+	ExtraServices         *ExtraServicesPackageIntlRateV2Request `xml:"ExtraServices,omitempty"`
+	AcceptanceDateTime    string                                 `xml:"AcceptanceDateTime,omitempty"`
+	DestinationPostalCode string                                 `xml:"DestinationPostalCode,omitempty"`
+	Content               *ContentPackageIntlRateV2Request       `xml:"Content,omitempty"`
 }
 
 type IntlRateV2Request struct {
@@ -65,7 +65,7 @@ type IntlRateV2Response struct {
 			ContentType        string `xml:"ContentType,omitempty"`
 			ContentDescription string `xml:"ContentDescription,omitempty"`
 		} `xml:"Content,omitempty"`
-		Service []struct {
+		Service struct {
 			ID         string `xml:"ID,attr"`
 			Pounds     string `xml:"Pounds"`
 			Ounces     string `xml:"Ounces"`

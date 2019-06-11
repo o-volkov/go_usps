@@ -2,7 +2,7 @@ package go_usps
 
 // USPS SCAN API
 // https://www.usps.com/business/web-tools-apis/scan-api.htm#_Toc514661497
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API SCAN.)
 const (
 	Form3152 Form = "3152"
 	Form5630 Form = "5630"

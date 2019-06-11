@@ -99,7 +99,7 @@ func TestUSPS_ExpressMailServiceCommitments(t *testing.T) {
 		USERID: username,
 	}
 
-	request.OriginZip = "90201"
+	request.OriginZIP = "90201"
 
 	rStr, _ := request.toHTTPRequestStr(false)
 	requestResponseMap := map[string][]byte{

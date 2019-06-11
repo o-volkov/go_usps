@@ -4,7 +4,7 @@ import "encoding/xml"
 
 // eVS Priority Mail Express International Label API
 // https://www.usps.com/business/web-tools-apis/evs-international-label-api.htm#_Toc529432214
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API eVSExpressMailIntl.)
 type ImageParametersEVSExpressMailIntlRequest struct {
 	ImageParameter string `xml:"ImageParameter,omitempty"`
 }

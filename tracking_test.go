@@ -34,11 +34,7 @@ func TestUSPS_Track(t *testing.T) {
 		USERID: username,
 	}
 
-	newTrackId := struct {
-		ID string `xml:"ID,attr"`
-	}{ID: "9341989949036022338924"}
-
-	request.TrackID = append(request.TrackID, newTrackId)
+	request.TrackID = append(request.TrackID, TrackIDTrackRequest{ID: "9341989949036022338924"})
 
 	rStr, _ := request.toHTTPRequestStr(false)
 	requestResponseMap := map[string][]byte{

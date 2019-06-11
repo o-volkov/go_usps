@@ -4,6 +4,7 @@ package go_usps
 // https://www.usps.com/business/web-tools-apis/service-delivery-calculator-get-locations-api.htm#_Toc525733871
 
 type SDCGetLocationsRequest struct {
+	USERID          string `xml:"USERID,attr"`
 	MailClass       string `xml:"MailClass"`
 	OriginZIP       string `xml:"OriginZIP"`
 	DestinationZIP  string `xml:"DestinationZIP"`
@@ -63,7 +64,7 @@ type SDCGetLocationsResponse struct {
 		EAD                  string `xml:"EAD,omitempty"`
 		SvcStdDays           string `xml:"SvcStdDays,omitempty"`
 		SchedDlvryDate       string `xml:"SchedDlvryDate,omitempty"`
-		HFPU                 []struct {
+		HFPU                 struct {
 			EAD             string `xml:"EAD,omitempty"`
 			COT             string `xml:"COT,omitempty"`
 			ServiceStandard struct {
@@ -112,6 +113,8 @@ type SDCGetLocationsResponse struct {
 }
 
 func (U *USPS) ServiceDeliveryCalculatorGetLocations(request *SDCGetLocationsRequest) (SDCGetLocationsResponse, error) {
+	request.USERID = U.Username
+
 	result := new(SDCGetLocationsResponse)
 	err := U.Client.Execute(request, result)
 

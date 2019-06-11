@@ -2,7 +2,7 @@ package go_usps
 
 // Track and Confirm by Email API
 // https://www.usps.com/business/web-tools-apis/track-and-confirm-api.htm#_Toc536704365
-
+// TODO: Not tested (API Authorization failure. User XXXXXXXXXXXX is not authorized to use API PTSEmail.)
 type PTSEmailRequest struct {
 	USERID      string `xml:"USERID,attr"`
 	TrackID     string `xml:"TrackID"`

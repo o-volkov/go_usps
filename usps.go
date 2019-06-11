@@ -1,7 +1,7 @@
 package go_usps
 
 const (
-	defaultHttpsDev  string = "https://secure.shippingapis.com/ShippingAPITest.dll?API="
+	defaultHttpsDev  string = "https://stg-secure.shippingapis.com/ShippingAPI.dll?API="
 	defaultHttpsProd string = "https://secure.shippingapis.com/ShippingAPI.dll?API="
 )
 

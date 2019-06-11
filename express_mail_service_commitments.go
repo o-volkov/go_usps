@@ -5,7 +5,7 @@ package go_usps
 
 type ExpressMailCommitmentRequest struct {
 	USERID         string `xml:"USERID,attr"`
-	OriginZip      string `xml:"OriginZip"`
+	OriginZIP      string `xml:"OriginZIP"`
 	DestinationZIP string `xml:"DestinationZIP"`
 	Date           string `xml:"Date"`
 	DropOffTime    string `xml:"DropOffTime,omitempty"`

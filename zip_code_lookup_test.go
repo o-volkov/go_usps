@@ -48,9 +48,13 @@ func TestUSPS_ZipCodeLookup(t *testing.T) {
 		PASSWORD: password,
 	}
 
-	request.Address.Address2 = "8 Wildwood Drive"
-	request.Address.City = "Old Lyme"
-	request.Address.State = "CT"
+	addr := AddressZipCodeLookupRequest{
+		Address2: "8 Wildwood Drive",
+		City:     "Old Lyme",
+		State:    "CT",
+	}
+
+	request.Address = append(request.Address, addr)
 
 	requestStr, _ := request.toHTTPRequestStr(false)
 
@@ -58,8 +62,14 @@ func TestUSPS_ZipCodeLookup(t *testing.T) {
 		USERID:   username,
 		PASSWORD: password,
 	}
-	failureRequest.Address.ID = "0"
-	failureRequest.Address.City = "NY"
+
+	failureAddr := AddressZipCodeLookupRequest{
+		Address2: "",
+		City:     "",
+		State:    "NY",
+	}
+
+	failureRequest.Address = append(failureRequest.Address, failureAddr)
 
 	failureRequestStr, _ := failureRequest.toHTTPRequestStr(false)
 
